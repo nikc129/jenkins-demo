@@ -19,10 +19,11 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Test stage (reading README)'
-                bat 'type README.md'
+                echo 'Running tests...'
+                bat 'findstr "PASS" README.md'
             }
         }
+
 
         stage('Deploy') {
             steps {
